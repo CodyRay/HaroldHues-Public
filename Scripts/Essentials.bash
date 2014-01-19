@@ -72,3 +72,16 @@ echo "comm -13 <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Pack
 echo "" >>  ~/packages.txt
 comm -13 <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort) <(comm -23 <(dpkg-query -W -f='${Package}\n' | sed 1d | sort) <(apt-mark showauto | sort) ) >> ~/packages.txt
 read -p "Press [Enter] key to finish by restarting (or CTRL-C to stop the script here)..." && sudo reboot
+gsettings set org.gnome.desktop.default-applications.terminal exec 'terminator'
+touch ~/.local/share/applications/vim.desktop &&
+echo "[Desktop Entry]" >> ~/.local/share/applications/vim.desktop &&
+echo "Categories=Utility;TextEditor;" >> ~/.local/share/applications/vim.desktop &&
+echo "Comment=Edit file in Vim" >> ~/.local/share/applications/vim.desktop &&
+echo "Exec=vim %f" >> ~/.local/share/applications/vim.desktop &&
+echo "GenericName=Process Viewer" >> ~/.local/share/applications/vim.desktop &&
+echo "Hidden=false" >> ~/.local/share/applications/vim.desktop &&
+echo "Icon=vim" >> ~/.local/share/applications/vim.desktop &&
+echo "Name=Vim" >> ~/.local/share/applications/vim.desktop &&
+echo "Terminal=true" >> ~/.local/share/applications/vim.desktop &&
+echo "Type=Application" >> ~/.local/share/applications/vim.desktop &&
+echo "Version=1.0" >> ~/.local/share/applications/vim.desktop;

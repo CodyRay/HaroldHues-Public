@@ -1,0 +1,8 @@
+# /etc/fsab
+# Remember to make the mount points first
+# I think this is the correct way to setup NTFS drives to auto mount
+/dev/sda5	/Cloud	ntfs-3g	defaults,uid=1000,gid=1000,dmask=027,fmask=027	0	2
+/dev/sda6       /Storage	ntfs-3g defaults,uid=1000,gid=1000,dmask=027,fmask=027	0       2
+# These are here to prevent them showing up They can be mounted by using 'sudo mount /<folder or devicename>
+/dev/sda3	/Windows	ntfs-3g defaults,uid=1000,gid=1000,dmask=027,fmask=027,noauto      0       2
+/dev/sda1	/WinSysRes	ntfs-3g defaults,uid=1000,gid=1000,dmask=027,fmask=027,noauto      0       2
