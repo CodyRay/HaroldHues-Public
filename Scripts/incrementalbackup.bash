@@ -5,7 +5,7 @@ DAY0=`date -I`
 #Folder Number
 #FLD
 #The source directory:
-SRC="/home/hoeftc/Storage/"
+SRC="/Storage/"
 #The target directory:
 LOC="/media/Passport/"
 #The Specific backup location
@@ -20,7 +20,7 @@ then
 mkdir $LGS
 fi
 
-exec >>$LGS/$DAY0.txt 2>&1
+exec > >(tee $LGS/$DAY0.txt)
 echo log file $DAY0 Created 
 echo $DAY0
 date
@@ -68,6 +68,9 @@ OPT="-rltDvh --delete --link-dest=$LNK"
 #Execute the backup
 echo rsync $OPT $SRC $TRG
 
-rsync $OPT $SRC $TRG
+rsync $OPT $SRC $TRG &&
+echo "Rsync Didn't Report any Errors" ||
+echo "Errors Were Reported" ||
+read -p "Press any Key to Continue..." -s ||
+echo ""
 
-cat $LGS/$FLD.txt
