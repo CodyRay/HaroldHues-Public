@@ -36,9 +36,9 @@ set numberwidth=1
 "type the command :w!! to use
 "cmap w!! w !sudo tee > /dev/null %
 "If you are in a python, c, or Cpp document pressing F5 will save, compile, and run your code (with correct conventions)
-autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+"autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+"autocmd filetype c nnoremap <F5> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+"autocmd filetype cpp nnoremap <F5> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 set smartindent
 set tabstop=4
 set shiftwidth=4
