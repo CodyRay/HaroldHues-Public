@@ -19,9 +19,17 @@ function cd {
     builtin cd "$@" && ls -pFLa --color | grep -v / | tr "\n" "\t" && echo ""
 }
 
-stty erase 
+#Servers
+alias irc="ssh -tA shell.onid.oregonstate.edu screen -dr"
+alias milo="ssh -tA milo.nws.oregonstate.edu"
+alias onid="ssh -tA shell.onid.oregonstate.edu"
+alias engr="ssh -tA access.engr.oregonstate.edu"
+alias os-class="ssh -tA access.engr.oregonstate.edu ssh os-class"
 
-if [ $(hostname -s) == "os-class" ]
+
+#stty erase #For Oregon State Engr servers 
+
+if [ $(hostname -s) == "os-class" ] #CS 344
     then
         cd ~/cs344
 fi
