@@ -5,6 +5,7 @@ alias mv="mv -i"
 export PS1="\[\e[94m\][\h] \[\e[33m\](\W)\[\e[1;32m\] %\[\e[0m\] "
 export EDITOR="/usr/bin/vim"
 set -o vi
+alias yum='sudo yum'
 alias vi='vim'
 alias ls='ls -FAh --color --group-directories-first'
 alias sl='ls -FAh --color --group-directories-first'
