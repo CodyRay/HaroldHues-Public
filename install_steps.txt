@@ -1,0 +1,41 @@
+# Written with CentOs 7 in mind
+
+# Update stuff
+sudo yum -y update && sudo yum -y upgrade
+
+# Generate and upload ssh key to GitHub
+ssh-keygen -C ""
+cat ~/.ssh/id_rsa.pub
+
+# Install stuff
+sudo yum install epel-release
+sudo yum install git vim rubygems ghc cabal-install httpd gcc wget p7zip screen tree
+cabal update
+cabal install doctest
+
+# Clone my repos
+mkdir ~/repos
+git clone git@github.com:haroldhues/HaroldHues-Private.git ~/repos/private
+git clone git@github.com:haroldhues/HaroldHues-Public.git ~/repos/public
+
+# Load custom bashrc
+cat ~/repos/public/bashrc >> ~/.bashrc 
+source ~/.bashrc 
+
+# Awesome Vimrc Install
+git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+# Specify Important Git Configs
+git config --global core.editor "vim"
+git config --global user.name "Cody Ray Hoeft"
+git config --global user.email crhoeft@gmail.com
+
+# Open port 80
+sudo firewall-cmd --add-service=http
+sudo firewall-cmd --reload
+
+# Change to protocol 2 and disable root login
+sudo vim /etc/ssh/ssh_config 
+systemctl restart sshd.service
+sudo systemctl restart sshd.service
