@@ -36,6 +36,6 @@ sudo firewall-cmd --add-service=http
 sudo firewall-cmd --reload
 
 # Change to protocol 2 and disable root login
-sudo vim /etc/ssh/ssh_config 
+sudo vim /etc/ssh/sshd_config 
 systemctl restart sshd.service
 sudo systemctl restart sshd.service
