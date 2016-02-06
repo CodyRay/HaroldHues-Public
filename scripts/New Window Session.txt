@@ -1,5 +1,0 @@
-CTRL + ALT + F1
-startx -- :1
-CTRL + ALT + F8
-export DISPLAY=:1
-	commands
