@@ -28,6 +28,7 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # Specify Important Git Configs
 git config --global core.editor "vim"
+git config --global push.default simple
 git config --global user.name "Cody Ray Hoeft"
 git config --global user.email crhoeft@gmail.com
 
