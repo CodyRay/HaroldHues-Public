@@ -3,13 +3,15 @@ alias rm="rm -i"
 alias mv="mv -i"
 
 export PS1="\[\e[94m\][\h] \[\e[33m\](\W)\[\e[1;32m\] %\[\e[0m\] "
-
+export EDITOR="/usr/bin/vim"
+set -o vi
+alias vi='vim'
 alias ls='ls -FAh --color --group-directories-first'
 alias sl='ls -FAh --color --group-directories-first'
 alias l='ls -FAh --color --group-directories-first'
 alias ll='ls -lhGAtc --color --group-directories-first'
 alias dir=''
-alias forest='tree | less'
+alias forest='tree -C | less -R'
 alias d='tree -dLl 1'
 alias d2='tree -dLl 2'
 alias d3='tree -dLl 3'
