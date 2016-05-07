@@ -23,6 +23,10 @@ function cd {
     builtin cd "$@" && ls -FAh --color --group-directories-first
 }
 
+function mkdircd {
+    mkdir "$@" && cd "$@"
+}
+
 #stty erase #For Oregon State Engr servers 
 
 if [ $(hostname -s) == "os-class" ] #CS 344
