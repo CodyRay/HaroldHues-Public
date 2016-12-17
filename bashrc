@@ -43,3 +43,6 @@ HISTIGNORE='ls:history:dir:l:ll:d:d2:d3:dd:clear:ls *: dir *'
 PROMPT_COMMAND='history -a'
 shopt -s cmdhist
 alias wipe='history -w && history -c'
+
+#For ConEmu on Windows: Enable new tab in same directory and proper tab title
+PROMPT_COMMAND='ConEmuC -StoreCWD && ConEmuC -GuiMacro Rename 1 "`pwd`" >> /dev/null'
